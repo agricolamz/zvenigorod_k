@@ -12,7 +12,7 @@ readxl::read_xlsx("zvenigorod_к.xlsx") |>
   mutate(audio = str_remove(source, ".eaf"),
          audio = str_c(audio, "-", round(as.double(time_start)*1000)),
          audio = str_c(audio, "-", round(as.double(time_end)*1000)),
-         audio = str_c("http://lingconlab.ru/BesermanRus/OUT/", audio, ".wav"),
+         audio = str_c("https://github.com/agricolamz/zvenigorod_k/raw/main/audio/", audio, ".wav"),
          preposition = "") |> 
   mutate(id = 1:n()) |> 
   select(id, sentence, audio, preposition) ->
